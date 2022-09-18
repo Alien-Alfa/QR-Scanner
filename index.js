@@ -3,7 +3,7 @@ const qrcode = require("qrcode-terminal")
 const fs = require('fs')
 const pino = require('pino')
 const { delay , useSingleFileAuthState } = require("@adiwajshing/baileys")
-const { state, saveState } = useSingleFileAuthState('./session.alfa.json)
+const { state, saveState } = useSingleFileAuthState('./session.alfa.json')
 const { exec, spawn, execSync } = require("child_process")
 exec('rm -rf session.alfa.json')
 
