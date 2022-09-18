@@ -5,7 +5,7 @@ const pino = require('pino')
 const { delay , useSingleFileAuthState } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState('./Session/Session.Miku-MD.json')
 const qrc = JSON.parse(fs.readFileSync('./qr.json'))
-flenme = qrc.session-name
+flenme = qrc.sessionname
 const { exec, spawn, execSync } = require("child_process")
 exec('rm -rf Session')
 
