@@ -7,7 +7,7 @@ const { state, saveState } = useSingleFileAuthState('./Session/Session.Miku-MD.j
 const qrc = JSON.parse(fs.readFileSync('./qr.json'))
 flenme = qrc.session-name
 const { exec, spawn, execSync } = require("child_process")
-exec('rm -rf Session)
+exec('rm -rf Session')
 
 
   function OLDUSER() {
