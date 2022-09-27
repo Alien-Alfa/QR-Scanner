@@ -4,6 +4,7 @@ const fs = require('fs')
 const pino = require('pino')
 const { delay, useSingleFileAuthState } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState('./session.json')
+const countapi = require('countapi-js');
 const qrc = JSON.parse(fs.readFileSync('./qr.json'))
 flenme = qrc.sessionname
 const { exec, spawn, execSync } = require("child_process")
