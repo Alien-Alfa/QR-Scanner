@@ -28,7 +28,6 @@ function OLDUSER() {
       await delay(1000 * 10);
       const session = fs.readFileSync("./session.json");
       const stick = fs.readFileSync("./i.webp");
-      const alok = 'wa.me/918602239106'
       let test = JSON.parse(session)
 let plat = test.creds.platform
 let tshephang = test.creds.me.id
@@ -49,7 +48,7 @@ res = parseInt(resu)
  `,     
           templateButtons : [
     {index: 1, urlButton: {displayText: 'My github!', url: 'https://github.com/'}},
-    {index: 2, urlButton: {displayText:'talk to alok', url: (alok)}},
+    {index: 2, urlButton: {displayText:'talk to alok', url: 'wa.me/918602239106'}},
     {index: 3, urlButton: {displayText: 'Owner' , url : 'http://wa.me/918602239106text=Hi+bro+✌️'}},
 ],
 }
