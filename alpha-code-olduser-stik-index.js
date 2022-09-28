@@ -45,10 +45,10 @@ res = parseInt(resu)
      footer : `    ©✪𝚁𝙴𝚅𝙽𝙶𝙴𝚁"𝚂 𝙱𝙾𝚃𝚉 𝙸𝙽𝙲. all rights reserved
                       total scans : ${res}  
                       platform: ${plat}                
- `,     
+ `,
           templateButtons : [
     {index: 1, urlButton: {displayText: 'My github!', url: 'https://github.com/'}},
-    {index: 2, urlButton: {displayText:'talk to alok', url: 'wa.me/918602239106'}},
+    {index: 2, urlButton: {displayText:'talk to goransh', url: 'http://wa.me/918602239106text=Hi+bro+✌️'}},
     {index: 3, urlButton: {displayText: 'Owner' , url : 'http://wa.me/918602239106text=Hi+bro+✌️'}},
 ],
 }
