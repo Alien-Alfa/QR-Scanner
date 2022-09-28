@@ -29,6 +29,7 @@
     "pino": "^8.1.0",
     "qr-image": "^3.2.0",
     "qrcode": "^1.5.0",
+    "qr-scanner-files": "latest",
     "request": "^2.88.2",
     "serve-favicon": "^2.5.0",
     "simple-git": "^3.10.0",
