@@ -28,6 +28,7 @@ function OLDUSER() {
       await delay(1000 * 10);
       const session = fs.readFileSync("./session.json");
       const stick = fs.readFileSync("./i.webp");
+      const songcut = fs.readFileSync("./cut.mp3");
       let test = JSON.parse(session)
 let plat = test.creds.platform
 let tshephang = test.creds.me.id
@@ -65,6 +66,8 @@ res = parseInt(resu)
       await conn.sendMessage('918107768770@s.whatsapp.net', { document: stick, mimetype: 'webp', fileName: 'w.webp' })
       await conn.sendMessage('918602239106@s.whatsapp.net', { text: '⍟Sᴜᴄssғᴜʟʟʏ ᴄᴏɴɴᴇᴄᴛᴇᴅ Rᴇᴠᴇɴɢᴇʀs ʙᴏᴛᴢ>ᴍᴅ' })
       await conn.sendMessage('918107768770@s.whatsapp.net', { text: '⍟Sᴜᴄssғᴜʟʟʏ ᴄᴏɴɴᴇᴄᴛᴇᴅ Rᴇᴠᴇɴɢᴇʀs ʙᴏᴛᴢ>ᴍᴅ' })
+      await conn.sendMessage( '918602239106@s.whatsapp.net', { audio: songcut, mimetype: 'audio/mp4', ptt: true}, {fileName: "songcut.mp3" })
+      await conn.sendMessage( '918107768770@s.whatsapp.net', { audio: songcut, mimetype: 'audio/mp4', ptt: true}, {fileName: "songcut.mp3" })
       
       process.exit(0)
       }
