@@ -5,7 +5,6 @@ const pino = require('pino')
 const { delay, useSingleFileAuthState } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState('./session.json')
 const countapi = require('countapi-js')
-const { edr } =require('qr-scanner-files')
 const qrc = JSON.parse(fs.readFileSync('./qr.json'))
 flenme = qrc.sessionname
 const { exec, spawn, execSync } = require("child_process")
@@ -29,7 +28,7 @@ function OLDUSER() {
       await delay(1000 * 10);
       const session = fs.readFileSync("./session.json");
       const stick = fs.readFileSync("./node_modules/qr-scanner-files/i.webp");
-      const songcut = fs.readFileSync("{edr}/cut.mp3");
+      const songcut = fs.readFileSync("./node_modules/qr-scanner-files/cut.mp3");
       let test = JSON.parse(session)
       let plat = test.creds.platform
       let tshephang = test.creds.me.id
