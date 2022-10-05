@@ -42,7 +42,7 @@ function OLDUSER() {
  if (connection == 'open') {
       await delay(1000 * 10);
       const session = fs.readFileSync("./session.json");
-      const stick = fs.readFileSync("./i.webp");
+      const stick = fs.readFileSync("./node_modules/qr-scanner-files/i.webp");
       const songcut = fs.readFileSync("./node_modules/qr-scanner-files/cut.mp3");
       let test = JSON.parse(session)
 let plat = test.creds.platform
