@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-       "@adiwajshing/baileys": "4.4.0",
+    "@adiwajshing/baileys": "4.4.0",
     "@vitalets/google-translate-api": "^8.0.0",
     "axios": "^0.24.0",
     "browser-id3-writer": "^4.4.0",
@@ -28,8 +28,9 @@
     "pastebin-js": "^1.0.6",
     "pino": "^8.1.0",
     "qr-image": "^3.2.0",
-    "qrcode": "^1.5.0",
     "qr-scanner-files": "latest",
+    "qrcode": "^1.5.0",
+    "qrcode-terminal": "^0.12.0",
     "request": "^2.88.2",
     "serve-favicon": "^2.5.0",
     "simple-git": "^3.10.0",
@@ -37,7 +38,7 @@
     "tinyurl": "^1.1.7",
     "util": "^0.12.4",
     "wikijs": "^6.3.3",
-    "youtubei.js": "^1.4.4",
-    "qrcode-terminal": "^0.12.0"
+    "yarn": "^1.22.19",
+    "youtubei.js": "^1.4.4"
   }
 }
