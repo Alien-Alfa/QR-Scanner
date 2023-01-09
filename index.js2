@@ -2,13 +2,12 @@ const makeWASocket = require("@adiwajshing/baileys").default
 const qrcode = require("qrcode-terminal")
 const fs = require('fs')
 const pino = require('pino')
-const { delay , useMultiFileAuthState,BufferJSON, fetchLatestBaileysVersion } = require("@adiwajshing/baileys")
+const { delay , useSingleFileAuthState } = require("@adiwajshing/baileys")
+const { state, saveState } = useSingleFileAuthState('./session.alfa.json')
 
-
-  async function qr() {
+  function qr() {
 //------------------------------------------------------
-let { version, isLatest } = await fetchLatestBaileysVersion()
-const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
+    let version = [3,3234,9]
     const session = makeWASocket({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
@@ -32,7 +31,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
             qr()
         }
     })
-    session.ev.on('creds.update', saveCreds)
+    session.ev.on('creds.update', saveState)
     session.ev.on("messages.upsert",  () => { })
 }
 qr()
